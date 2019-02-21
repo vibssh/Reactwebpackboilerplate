@@ -1,0 +1,5 @@
+1. Task to Create Folder structure inside App/Components like so:
+	ComponentName
+	 - ComponentName.js
+         - ComponentName.scss
+	 - ComponentName.yaml

@@ -5,16 +5,18 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "create": "node -e 'require(\"./main\").createComponent()'"
   },
   "keywords": [],
-  "author": "",
+  "author": "Vaibhav Shringarpure",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.3.3",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.5",
     "css-loader": "^2.1.0",
+    "fs-extra": "^7.0.1",
     "fs-path": "0.0.24",
     "gulp": "^3.9.1",
     "html-webpack-plugin": "^3.2.0",
