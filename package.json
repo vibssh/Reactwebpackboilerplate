@@ -8,6 +8,11 @@
     "start": "webpack-dev-server",
     "create": "node -e 'require(\"./main\").createComponent()'"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint-staged"
+    }
+  },
   "lint-staged": {
     "**/*.{js,jsx}": [
       "pretty-quick --staged",
