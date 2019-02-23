@@ -6,12 +6,10 @@
   "scripts": {
     "build": "webpack",
     "start": "webpack-dev-server",
-    "create": "node -e 'require(\"./main\").createComponent()'",
-    "precommit": "lint-staged"
+    "create": "node -e 'require(\"./main\").createComponent()'"
   },
-  
   "lint-staged": {
-    "*.{js,jsx}": [
+    "**/*.{js,jsx}": [
       "pretty-quick --staged",
       "eslint --cache --fix",
       "git add"
