@@ -10,7 +10,7 @@
   },
 
   "lint-staged": {
-    "**/*.{js,jsx}": [
+    "**/*.{js,jsx,scss,css,html}": [
       "pretty-quick --staged",
       "eslint --cache --fix",
       "git add"
