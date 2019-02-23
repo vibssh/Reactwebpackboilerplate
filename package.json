@@ -6,9 +6,12 @@
   "scripts": {
     "build": "webpack",
     "start": "webpack-dev-server",
-    "create": "node -e 'require(\"./main\").createComponent()'",
+    "create": "node -e 'require(\"./main\").createComponent()'"
+  },
+  "husky": {
     "precommit": "lint-staged"
   },
+
   "lint-staged": {
     "*.{js,jsx}": [
       "pretty-quick --staged",
