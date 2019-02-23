@@ -20,13 +20,12 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        loader: 'babel-loader'
+        use: ['babel-loader', 'eslint-loader']
       },
       {
         test: /\.(scss|css)$/,
-        use: ['style-loader', 'css-loader','sass-loader'],
+        use: ['style-loader', 'css-loader', 'sass-loader']
       }
-
     ]
   },
 
@@ -36,5 +35,5 @@ module.exports = {
   },
 
   plugins: [HTMLWebpackPluginConfig],
-  mode:'development'
-}
+  mode: 'development'
+};
