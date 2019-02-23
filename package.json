@@ -1,8 +1,8 @@
 {
   "name": "React-Boilerplate",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A Starting point for React Application",
+  "main": "main.js",
   "scripts": {
     "build": "webpack",
     "start": "webpack-dev-server",
@@ -21,6 +21,7 @@
     "gulp": "^3.9.1",
     "html-webpack-plugin": "^3.2.0",
     "node-sass": "^4.11.0",
+    "prop-types": "^15.7.2",
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
     "sanitize.css": "^8.0.0",

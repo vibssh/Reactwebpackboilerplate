@@ -1,7 +1,7 @@
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 
 const HTMLWebpackPluginConfig = new HTMLWebpackPlugin({
-  template: __dirname + '/app/index.html',
+  template: __dirname + '/index.html',
   filename: 'index.html',
   inject: 'body',
   hash: true,
@@ -11,11 +11,14 @@ const HTMLWebpackPluginConfig = new HTMLWebpackPlugin({
 });
 
 module.exports = {
-  entry: __dirname + '/app/index.js',
+  entry: __dirname + '/index.js',
+  resolve: {
+    extensions: ['.js', '.jsx', '.scss', '.json', '.css']
+  },
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         loader: 'babel-loader'
       },
