@@ -9,7 +9,7 @@
     "create": "node -e 'require(\"./main\").createComponent()'"
   },
   "husky": {
-    "precommit": "lint-staged"
+    "precommit": "npm lint-staged"
   },
 
   "lint-staged": {
