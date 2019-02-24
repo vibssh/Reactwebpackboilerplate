@@ -1,6 +1,7 @@
 1. Task to Create Folder structure inside App/Components like so:
 	ComponentName
 	 - ComponentName.jsx
-         - ComponentName.scss
+   - ComponentName.scss
 	 - ComponentName.yaml
 2. Get Proptypes
+3. CSS Modules + SCSS

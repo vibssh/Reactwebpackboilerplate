@@ -4,13 +4,12 @@
   "description": "A Starting point for React Application",
   "main": "main.js",
   "scripts": {
-    "build": "webpack",
-    "start": "webpack-dev-server",
+    "build": "webpack --mode production",
+    "start": "webpack-dev-server --host 0.0.0.0 --port 3000 --mode development",
     "create": "node -e 'require(\"./main\").createComponent()'"
   },
-
   "lint-staged": {
-    "**/*.{js,jsx,scss,css,html}": [
+    "**/*.{js,jsx,scss,css}": [
       "pretty-quick --staged",
       "eslint --cache --fix",
       "git add"
@@ -36,13 +35,14 @@
     "eslint-config-react-app": "^3.0.7",
     "eslint-loader": "^2.1.2",
     "eslint-plugin-flowtype": "^3.4.2",
+    "eslint-plugin-html": "^5.0.3",
     "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-react": "^7.12.4",
     "fs-extra": "^7.0.1",
     "fs-path": "0.0.24",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.0",
     "html-webpack-plugin": "^3.2.0",
     "husky": "^1.3.1",
     "lint-staged": "^8.1.4",

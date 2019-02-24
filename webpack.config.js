@@ -30,10 +30,9 @@ module.exports = {
   },
 
   output: {
-    filename: 'transformed.js',
+    filename: 'main.js',
     path: __dirname + '/build'
   },
 
-  plugins: [HTMLWebpackPluginConfig],
-  mode: 'development'
+  plugins: [HTMLWebpackPluginConfig]
 };
