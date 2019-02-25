@@ -1,3 +1,4 @@
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 
 const HTMLWebpackPluginConfig = new HTMLWebpackPlugin({
@@ -15,6 +16,7 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx', '.scss', '.json', '.css']
   },
+
   module: {
     rules: [
       {
@@ -23,8 +25,18 @@ module.exports = {
         use: ['babel-loader', 'eslint-loader']
       },
       {
-        test: /\.(scss|css)$/,
-        use: ['style-loader', 'css-loader', 'sass-loader']
+        test: /\.scss$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              sourceMap: true
+            }
+          },
+          'sass-loader'
+        ]
       }
     ]
   },
@@ -34,5 +46,11 @@ module.exports = {
     path: __dirname + '/build'
   },
 
-  plugins: [HTMLWebpackPluginConfig]
+  plugins: [
+    HTMLWebpackPluginConfig,
+    new MiniCssExtractPlugin({
+      filename: 'style.css',
+      chunkFilename: '[name].css'
+    })
+  ]
 };

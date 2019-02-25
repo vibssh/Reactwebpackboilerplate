@@ -1,0 +1,15 @@
+/* -----------------------------------------------------------------------------
+ Component  : Card styles
+ Created on : 24/2/2019 7:13:13 PM
+ Created by : Vaibhav Shringarpure
+ ----------------------------------------------------------------------------- */
+
+$grey: #dedede;
+$white: #ffffff;
+$black: #222222;
+
+.card {
+  background: $grey;
+  color: $black;
+  padding: 20px;
+}
