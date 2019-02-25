@@ -9,7 +9,7 @@
     "create": "node -e 'require(\"./main\").createComponent()'"
   },
   "lint-staged": {
-    "**/*.{js,jsx,scss,css}": [
+    "**/*.{js,jsx}": [
       "pretty-quick --staged",
       "eslint --cache --fix",
       "git add"

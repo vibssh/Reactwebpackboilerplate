@@ -7,7 +7,7 @@ class App extends Component {
     return (
       <React.Fragment>
         <h1>Welcome to React Boilerplate</h1>
-        <Card />
+        <Card title="I am a custom Title ! " />
       </React.Fragment>
     );
   }

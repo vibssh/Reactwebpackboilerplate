@@ -7,7 +7,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styles from './Card.module.scss';
+import styles from './Card.scss';
 
 /* Type Checking for PropTypes */
 const propTypes = {
