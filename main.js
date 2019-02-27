@@ -17,18 +17,20 @@ const renameFiles = () => {
   fs.readdir(newDir, function(err, lists) {
     if (err) console.log(err);
     lists.forEach(function(list) {
-      const fileExt = path.parse(list).ext;
-      const newFileName = argv.$0 + fileExt;
-      const oldFilePath = newDir + '/' + list;
-      const newFilePath = newDir + '/' + newFileName;
+      if (list !== 'data.yaml') {
+        const fileExt = path.parse(list).ext;
+        const newFileName = argv.$0 + fileExt;
+        const oldFilePath = newDir + '/' + list;
+        const newFilePath = newDir + '/' + newFileName;
 
-      files.push(newFileName);
-      fs.rename(oldFilePath, newFilePath, function(err) {
-        if (err) {
-          console.log(err);
-          return;
-        }
-      });
+        files.push(newFileName);
+        fs.rename(oldFilePath, newFilePath, function(err) {
+          if (err) {
+            console.log(err);
+            return;
+          }
+        });
+      }
     });
     replaceFileContent(files);
   });

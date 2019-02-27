@@ -1,0 +1,13 @@
+# Data for   : ComponentName Component
+# Created on : date
+# Created by : Vaibhav Shringarpure
+
+# sample YAML Data
+person:
+  firstname: Tom
+  lastname: Smith
+  year: 1982
+  favorites:
+    - tennis
+    - golf
+  attributes: { Handed: Left, BirthPlace: Home }

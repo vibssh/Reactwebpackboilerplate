@@ -6,8 +6,7 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <h1>Welcome to React Boilerplate</h1>
-        <Card title="I am a custom Title ! " />
+        <Card />
       </React.Fragment>
     );
   }

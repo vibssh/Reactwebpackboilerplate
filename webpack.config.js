@@ -20,6 +20,10 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.yaml$/,
+        use: 'js-yaml-loader'
+      },
+      {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: ['babel-loader', 'eslint-loader']
