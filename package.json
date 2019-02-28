@@ -6,7 +6,8 @@
   "scripts": {
     "build": "webpack --mode production",
     "start": "webpack-dev-server --host 0.0.0.0 --port 3000 --mode development",
-    "create": "node -e 'require(\"./main\").createComponent()'"
+    "create": "node -e 'require(\"./main\").createComponent()'",
+    "empty": "node -e 'require(\"./main\").emptyDirectory()'"
   },
   "lint-staged": {
     "**/*.{js,jsx}": [

@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 
-import Card from './components/Card/Card';
+import Navigation from './components/Navigation/Navigation';
 
 class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <Card />
+        <h1>Hello World !</h1>
+        <Navigation />
       </React.Fragment>
     );
   }

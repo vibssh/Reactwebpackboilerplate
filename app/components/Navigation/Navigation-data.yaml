@@ -1,0 +1,10 @@
+# Data for   : Navigation Component
+# Created on : 28/2/2019 09:18:41
+# Created by : Vaibhav Shringarpure
+
+# sample YAML Data
+navigation:
+  list:
+    - { id: 1, name: Button }
+    - { id: 2, name: Card }
+    #next

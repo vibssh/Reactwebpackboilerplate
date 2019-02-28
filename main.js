@@ -17,20 +17,19 @@ const renameFiles = () => {
   fs.readdir(newDir, function(err, lists) {
     if (err) console.log(err);
     lists.forEach(function(list) {
-      if (list !== 'data.yaml') {
-        const fileExt = path.parse(list).ext;
-        const newFileName = argv.$0 + fileExt;
-        const oldFilePath = newDir + '/' + list;
-        const newFilePath = newDir + '/' + newFileName;
+      const fileExt = path.parse(list).ext;
+      const newFileName =
+        list !== 'data.yaml' ? argv.$0 + fileExt : argv.$0 + '-data' + fileExt;
+      const oldFilePath = newDir + '/' + list;
+      const newFilePath = newDir + '/' + newFileName;
 
-        files.push(newFileName);
-        fs.rename(oldFilePath, newFilePath, function(err) {
-          if (err) {
-            console.log(err);
-            return;
-          }
-        });
-      }
+      files.push(newFileName);
+      fs.rename(oldFilePath, newFilePath, function(err) {
+        if (err) {
+          console.log(err);
+          return;
+        }
+      });
     });
     replaceFileContent(files);
   });
@@ -58,6 +57,10 @@ const replaceFileContent = files => {
   });
 };
 
+const emptyDirectory = () => {
+  fsExtra.emptyDirSync(destFolder);
+};
+
 const createComponent = () => {
   const filePath = destFolder + argv.$0;
   fsExtra.pathExists(filePath, (err, exists) => {
@@ -79,5 +82,6 @@ const createComponent = () => {
 };
 
 module.exports = {
-  createComponent: createComponent
+  createComponent: createComponent,
+  emptyDirectory: emptyDirectory
 };

@@ -1,5 +1,5 @@
-/* Component  : Card is a Functional Component
- * Created on : 27/2/2019 15:06:31
+/* Component  : Navigation is a Functional Component
+ * Created on : 28/2/2019 09:18:41
  * Created by : Vaibhav Shringarpure
  */
 
@@ -7,7 +7,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import data from './data.yaml';
+import Data from './Navigation-data.yaml';
+
 /* Type Checking for PropTypes */
 const propTypes = {
   // id: PropTypes.number.isRequired,
@@ -20,15 +21,19 @@ const defaultProps = {
 };
 
 /* Functional Component Function below */
-const Card = props => {
+const Navigation = props => {
   //Define your Methods Here
-  console.log('data', data);
+  const data = Data.navigation.list;
 
+  const navList = data.map(d => {
+    console.log(d);
+    return <li key="d.id">{d.name}</li>;
+  });
   //Returns JSX below
-  return <div />;
+  return <ul>{navList}</ul>;
 };
 
-Card.propTypes = propTypes; // from Line 11
-Card.defaultProps = defaultProps; // from Line 17
+Navigation.propTypes = propTypes; // from Line 11
+Navigation.defaultProps = defaultProps; // from Line 17
 
-export default Card;
+export default Navigation;
