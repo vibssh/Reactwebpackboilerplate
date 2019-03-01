@@ -6,8 +6,7 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <h1>Hello World !</h1>
-        <Navigation />
+        <h1>_</h1>
       </React.Fragment>
     );
   }

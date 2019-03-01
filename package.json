@@ -7,7 +7,9 @@
     "build": "webpack --mode production",
     "start": "webpack-dev-server --host 0.0.0.0 --port 3000 --mode development",
     "create": "node -e 'require(\"./main\").createComponent()'",
-    "empty": "node -e 'require(\"./main\").emptyDirectory()'"
+    "empty": "node -e 'require(\"./main\").emptyDirectory()'",
+    "watcher": "node -e 'require(\"./main\").watcher()'",
+    "watch": "npm run watcher"
   },
   "lint-staged": {
     "**/*.{js,jsx}": [
@@ -47,6 +49,7 @@
     "gulp": "^4.0.0",
     "html-webpack-plugin": "^3.2.0",
     "husky": "^1.3.1",
+    "js-yaml": "^3.12.2",
     "js-yaml-loader": "^1.0.1",
     "lint-staged": "^8.1.4",
     "mini-css-extract-plugin": "^0.5.0",
@@ -63,5 +66,8 @@
     "webpack-cli": "^3.2.3",
     "webpack-dev-server": "^3.1.14",
     "yargs": "^13.2.0"
+  },
+  "dependencies": {
+    "write-yaml": "^1.0.0"
   }
 }

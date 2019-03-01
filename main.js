@@ -2,6 +2,10 @@ const fs = require('fs');
 const fsExtra = require('fs-extra');
 const argv = require('yargs').argv;
 const path = require('path');
+const yaml = require('js-yaml');
+
+let navListObj;
+let folderDeleted;
 
 const componentType = argv['_'][0] ? argv['_'][0].toLowerCase() : '';
 const baseFolder =
@@ -32,6 +36,7 @@ const renameFiles = () => {
       });
     });
     replaceFileContent(files);
+    readNavDataFile();
   });
 };
 
@@ -43,8 +48,8 @@ const replaceFileContent = files => {
     const month = today.getMonth() + 1;
     const fullYear = today.getFullYear();
     const currentTime = today.toLocaleTimeString();
-
     const dateObj = `${date}/${month}/${fullYear} ${currentTime}`;
+
     const fileData = fs.readFileSync(fileDir + '/' + file, 'utf8');
     const result = fileData
       .replace(/ComponentName/g, argv.$0)
@@ -57,8 +62,32 @@ const replaceFileContent = files => {
   });
 };
 
+const readNavDataFile = () => {
+  const dir = destFolder + 'Navigation/';
+  const file = 'Navigation-data.yaml';
+  const fileData = yaml.load(fs.readFileSync(dir + file, 'utf8'));
+  navListObj = fileData.navigation.list;
+  const objLength = navListObj !== null ? navListObj.length : 0;
+  const id = objLength + 1;
+  const name = argv.$0;
+  const data = `\n     - id: ${id}\n       name: ${name}`;
+
+  fs.appendFile(dir + file, data, err => {
+    if (err) throw err;
+    console.log(`${argv.$0} add to Navigation `);
+  });
+};
+
 const emptyDirectory = () => {
   fsExtra.emptyDirSync(destFolder);
+};
+
+const watcher = () => {
+  fs.watch(destFolder, (eventType, filename) => {
+    folderDeleted = filename;
+
+    return folderDeleted;
+  });
 };
 
 const createComponent = () => {
@@ -83,5 +112,6 @@ const createComponent = () => {
 
 module.exports = {
   createComponent: createComponent,
-  emptyDirectory: emptyDirectory
+  emptyDirectory: emptyDirectory,
+  watcher: watcher
 };
