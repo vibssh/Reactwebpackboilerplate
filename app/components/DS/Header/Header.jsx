@@ -7,7 +7,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import HeaderStyles from './Header.scss';
-import Icon from '../../assets/icons/Logo.svg';
+import Icon from '../../../assets/icons/Logo.svg';
 
 import SubHeader from '../SubHeader/SubHeader';
 

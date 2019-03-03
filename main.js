@@ -8,6 +8,7 @@ let navListObj;
 let folderDeleted;
 
 const componentType = argv['_'][0] ? argv['_'][0].toLowerCase() : '';
+
 const baseFolder =
   componentType === 'class'
     ? './Boilerplate/ClassComponent/'
@@ -15,7 +16,14 @@ const baseFolder =
     ? './Boilerplate/NavigationalComponent/'
     : './Boilerplate/FunctionalComponent';
 
-const destFolder = './app/components/';
+const appType = argv['_'][1] ? argv['_'][1].toLowerCase() : '';
+
+const destFolder =
+  appType === 'ds'
+    ? './app/components/DS/'
+    : appType === 'library'
+    ? './app/components/Library/'
+    : './app/components/Library/';
 
 const renameFiles = () => {
   const newDir = destFolder + argv.$0 + '/';

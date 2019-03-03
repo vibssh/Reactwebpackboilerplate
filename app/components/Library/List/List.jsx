@@ -7,6 +7,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import Button from '../Button/Button';
+
 /* Type Checking for PropTypes */
 const propTypes = {
   // id: PropTypes.number.isRequired,
@@ -31,9 +33,10 @@ const List = props => {
     const keyValue = list.id ? list.id : index;
     return (
       <li key={keyValue} className={props.listClassName}>
-        <a href="#" title={list.key} className={props.listLinkClassName}>
+        <Button buttonText={list.key} />
+        {/*<a href="#" title={list.key} className={props.listLinkClassName}>
           {list.key}
-        </a>
+        </a>*/}
       </li>
     );
   });

@@ -5,24 +5,12 @@
 
 /* Import Statement Below */
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import data from './SubHeader-data.yaml';
 
 import Styles from './SubHeader.scss';
 
-import List from '../List/List';
-
-/* Type Checking for PropTypes */
-const propTypes = {
-  // id: PropTypes.number.isRequired,
-  // name: PropTypes.string,
-};
-
-/* Declare default Props value for all non-required props */
-const defaultProps = {
-  // name: 'Vaibhav Shringarpure',
-};
+import List from '../../Library/List/List';
 
 /* Functional Component Function below */
 const SubHeader = props => {
@@ -39,8 +27,5 @@ const SubHeader = props => {
     </ul>
   );
 };
-
-SubHeader.propTypes = propTypes; // from Line 11
-SubHeader.defaultProps = defaultProps; // from Line 17
 
 export default SubHeader;
