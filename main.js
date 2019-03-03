@@ -9,9 +9,11 @@ let folderDeleted;
 
 const componentType = argv['_'][0] ? argv['_'][0].toLowerCase() : '';
 const baseFolder =
-  componentType !== 'class'
-    ? './Boilerplate/FunctionalComponent/'
-    : './Boilerplate/ClassComponent/';
+  componentType === 'class'
+    ? './Boilerplate/ClassComponent/'
+    : componentType === 'navigation'
+    ? './Boilerplate/NavigationalComponent/'
+    : './Boilerplate/FunctionalComponent';
 
 const destFolder = './app/components/';
 
@@ -36,7 +38,7 @@ const renameFiles = () => {
       });
     });
     replaceFileContent(files);
-    readNavDataFile();
+    //readNavDataFile();
   });
 };
 
@@ -65,6 +67,8 @@ const replaceFileContent = files => {
 const readNavDataFile = () => {
   const dir = destFolder + 'Navigation/';
   const file = 'Navigation-data.yaml';
+  const noNav = argv['_'][0];
+
   const fileData = yaml.load(fs.readFileSync(dir + file, 'utf8'));
   navListObj = fileData.navigation.list;
   const objLength = navListObj !== null ? navListObj.length : 0;
@@ -72,10 +76,12 @@ const readNavDataFile = () => {
   const name = argv.$0;
   const data = `\n     - id: ${id}\n       name: ${name}`;
 
-  fs.appendFile(dir + file, data, err => {
-    if (err) throw err;
-    console.log(`${argv.$0} add to Navigation `);
-  });
+  if (noNav === undefined) {
+    fs.appendFile(dir + file, data, err => {
+      if (err) throw err;
+      console.log(`${argv.$0} add to Navigation `);
+    });
+  }
 };
 
 const emptyDirectory = () => {
@@ -92,6 +98,7 @@ const watcher = () => {
 
 const createComponent = () => {
   const filePath = destFolder + argv.$0;
+
   fsExtra.pathExists(filePath, (err, exists) => {
     if (err) console.log(err);
     if (!exists) {

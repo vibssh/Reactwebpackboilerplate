@@ -1,0 +1,51 @@
+/* Configuaration of Colour, Typography */
+
+/* 1. Colours
+**  =================================================================
+*/
+
+$hm-purple: #2e358b;
+$hm-light-purple: #6f72af;
+$hm-bright-purple: #912b88;
+$hm-pink: #d53880;
+$hm-light-pink: #f499be;
+$hm-red: #b10e1e;
+$hm-bright-red: #df3034;
+$hm-orange: #f47738;
+$hm-brown: #b58840;
+$hm-yellow: #ffbf47;
+$hm-light-green: #85994b;
+$hm-green: #006435;
+$hm-turquoise: #28a197;
+$hm-light-blue: #2b8cc4;
+$hm-blue: #005ea5;
+$hm-black: #0b0c0c;
+$hm-grey-1: #6f777b;
+$hm-grey-2: #bfc1c3;
+$hm-grey-3: #dee0e2;
+$hm-grey-4: #f8f8f8;
+$hm-white: #ffffff;
+
+/* 1.1 Text */
+$hm-text-colour: $hm-black;
+$hm-secondary-text-colour: $hm-grey-1;
+
+/* 1.2 Links */
+$hm-link-colour: $hm-bright-purple;
+$hm-link-hover-colour: $hm-pink;
+$hm-link-visited-colour: $hm-light-purple;
+$hm-link-active-colour: $hm-bright-red;
+
+/* 1.3 Borders */
+$hm-border-colour: $hm-grey-2;
+$hm-input-border-colour: $hm-blue;
+
+/* 1.4 Focus States */
+$hm-focus-colour: $hm-yellow;
+$hm-focus-text-colour: $hm-black;
+
+/* 1.5 Error State */
+$hm-error-colour: $hm-red;
+
+/* 1.6 Brand Colour */
+$hm-brand-colour: $hm-orange;

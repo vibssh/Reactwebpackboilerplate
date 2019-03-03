@@ -1,0 +1,28 @@
+// -----------------------------------------------------------------------------
+// Component  : SubHeader styles
+// Created on : 3/3/2019 16:38:27
+// Created by : Vaibhav Shringarpure
+// -----------------------------------------------------------------------------
+
+/* Import Utils */
+@import '../../scss/utils';
+
+.subheader {
+  align-items: center;
+  background: $hm-grey-3;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 10px 20px;
+}
+
+.subheaderList {
+  margin-bottom: 0;
+
+  a {
+    margin: 0 10px;
+  }
+}
+
+.subheaderLink {
+  margin-bottom: 0;
+}

@@ -7,10 +7,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import List from '../List/List';
-
-import data from './Navigation.yaml';
-
 /* Type Checking for PropTypes */
 const propTypes = {
   // id: PropTypes.number.isRequired,
@@ -34,13 +30,7 @@ class Navigation extends Component {
 
   //Render Method returning JSX
   render() {
-    const ListItems = data.navigation.list;
-    console.log(ListItems);
-    return (
-      <ul>
-        <List listArray={ListItems} />
-      </ul>
-    );
+    return <div />;
   }
 }
 

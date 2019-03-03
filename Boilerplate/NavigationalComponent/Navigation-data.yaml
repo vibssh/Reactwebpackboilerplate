@@ -1,5 +1,5 @@
-# Data for   : Cat Component
-# Created on : 1/3/2019 13:41:46
+# Data for   : Navigation Component
+# Created on : 1/3/2019 22:22:34
 # Created by : Vaibhav Shringarpure
 
 # sample YAML Data
@@ -11,3 +11,5 @@
 #     - tennis
 #     - golf
 #   attributes: { Handed: Left , BirthPlace: Home } - This is object
+navigation:
+  list:
