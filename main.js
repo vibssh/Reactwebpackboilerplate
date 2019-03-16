@@ -12,18 +12,9 @@ const componentType = argv['_'][0] ? argv['_'][0].toLowerCase() : '';
 const baseFolder =
   componentType === 'class'
     ? './Boilerplate/ClassComponent/'
-    : componentType === 'navigation'
-    ? './Boilerplate/NavigationalComponent/'
     : './Boilerplate/FunctionalComponent';
 
-const appType = argv['_'][1] ? argv['_'][1].toLowerCase() : '';
-
-const destFolder =
-  appType === 'ds'
-    ? './app/components/DS/'
-    : appType === 'library'
-    ? './app/components/Library/'
-    : './app/components/Library/';
+const destFolder = './app/components/';
 
 const renameFiles = () => {
   const newDir = destFolder + argv.$0 + '/';
@@ -46,7 +37,6 @@ const renameFiles = () => {
       });
     });
     replaceFileContent(files);
-    //readNavDataFile();
   });
 };
 
@@ -72,38 +62,6 @@ const replaceFileContent = files => {
   });
 };
 
-const readNavDataFile = () => {
-  const dir = destFolder + 'Navigation/';
-  const file = 'Navigation-data.yaml';
-  const noNav = argv['_'][0];
-
-  const fileData = yaml.load(fs.readFileSync(dir + file, 'utf8'));
-  navListObj = fileData.navigation.list;
-  const objLength = navListObj !== null ? navListObj.length : 0;
-  const id = objLength + 1;
-  const name = argv.$0;
-  const data = `\n     - id: ${id}\n       name: ${name}`;
-
-  if (noNav === undefined) {
-    fs.appendFile(dir + file, data, err => {
-      if (err) throw err;
-      console.log(`${argv.$0} add to Navigation `);
-    });
-  }
-};
-
-const emptyDirectory = () => {
-  fsExtra.emptyDirSync(destFolder);
-};
-
-const watcher = () => {
-  fs.watch(destFolder, (eventType, filename) => {
-    folderDeleted = filename;
-
-    return folderDeleted;
-  });
-};
-
 const createComponent = () => {
   const filePath = destFolder + argv.$0;
 
@@ -126,7 +84,5 @@ const createComponent = () => {
 };
 
 module.exports = {
-  createComponent: createComponent,
-  emptyDirectory: emptyDirectory,
-  watcher: watcher
+  createComponent
 };

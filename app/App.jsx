@@ -1,18 +1,13 @@
 import React, { Component } from 'react';
-import Styles from './App.scss';
-import Header from './components/DS/Header/Header';
-
-//import Navigation from './components/Navigation/Navigation';
+import Styles from './scss/app.scss';
 
 class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <Header />
         <div className={Styles['container-fluid']}>
           <div className={[Styles['row'], Styles['row--spacing']].join(' ')}>
-            <div className={Styles['col-sm-4']}>Navigation</div>
-            <div className={Styles['col-sm-8']}>Content</div>
+            <div className={Styles['col-12']}>Hello World !</div>
           </div>
         </div>
       </React.Fragment>
@@ -21,6 +16,3 @@ class App extends Component {
 }
 
 export default App;
-
-// ToDo Work on the Navigation List - Its an array of Object so how will we use
-// the same list component

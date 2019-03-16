@@ -1,7 +1,4 @@
-1. Task to Create Folder structure inside App/Components like so:
-	ComponentName
-	 - ComponentName.jsx
-   - ComponentName.scss
-	 - ComponentName.yaml
-2. Get Proptypes
-3. CSS Modules + SCSS
+1. When Component is created get the name of component and open the navigation.yaml file and add key: with file name as value
+
+2. Separate BoilerPlate from StyleGuide
+2. Create a README File to as to how to use the npm commands
