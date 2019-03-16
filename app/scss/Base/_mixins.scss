@@ -38,13 +38,13 @@ $font-base-path: '../../src/fonts/' !default;
 // Breakpoint Mixin
 $breakpoints: (
   'small': (
-    min-width: 767px
+    min-width: 40.0625em
   ),
   'medium': (
-    min-width: 992px
+    min-width: 62em
   ),
   'large': (
-    min-width: 1200px
+    min-width: 68.75em
   )
 ) !default;
 

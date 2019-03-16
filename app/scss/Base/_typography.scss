@@ -35,26 +35,26 @@ $font-size-h4-mobile: 16px;
 $font-size-h4-desktop: 19px;
 
 /* Zero off all margins from text elements */
-:global{
-    p,
-    h1,
-    h2,
-    h3,
-    h4,
-    ul,
-    ol,
-    li {
+:global {
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  ul,
+  ol,
+  li {
     font-weight: $base-font-weight;
     margin: 0;
-    }
+  }
 
-    /* Paragraph Styles - p tag */
-    p {
+  /* Paragraph Styles - p tag */
+  p {
     @include remsize(font-size, $font-size-base-mobile);
     line-height: $line-height-l-mobile;
     margin-bottom: 15px;
 
-    @include breakpoint('medium') {
+    @include breakpoint('small') {
       @include remsize(font-size, $font-size-base-desktop);
       line-height: $line-height-l-desktop;
       margin-bottom: 20px;
@@ -67,75 +67,80 @@ $font-size-h4-desktop: 19px;
       line-height: $line-height-s-mobile;
       margin-bottom: 20px;
 
-      @include breakpoint('medium') {
+      @include breakpoint('small') {
         @include remsize(font-size, $font-size-lead-desktop);
         line-height: $line-height-s-desktop;
         margin-bottom: 30px;
       }
     }
-    }
+  }
 
-    /* Headings */
-    h1 {
+  /* Headings */
+  h1 {
     @include remsize(font-size, $font-size-h1-mobile);
+    font-weight: $bold-font-weight;
     line-height: $line-height-xs-mobile;
     margin-bottom: 30px;
 
-    @include breakpoint('medium') {
+    @include breakpoint('small') {
       @include remsize(font-size, $font-size-h1-desktop);
       line-height: $line-height-xs-desktop;
       margin-bottom: 50px;
     }
-    }
+  }
 
-    h2 {
+  h2 {
     @include remsize(font-size, $font-size-h2-mobile);
+    font-weight: $bold-font-weight;
     line-height: $line-height-s-mobile;
     margin-bottom: 20px;
 
-    @include breakpoint('medium') {
+    @include breakpoint('small') {
       @include remsize(font-size, $font-size-h2-desktop);
       line-height: $line-height-xs-desktop;
       margin-bottom: 20px;
     }
-    }
+  }
 
-    h3 {
+  h3 {
     @include remsize(font-size, $font-size-h3-mobile);
+    font-weight: $bold-font-weight;
     line-height: $line-height-s-mobile;
     margin-bottom: 15px;
 
-    @include breakpoint('medium') {
+    @include breakpoint('small') {
       @include remsize(font-size, $font-size-h3-desktop);
       line-height: $line-height-s-desktop;
       margin-bottom: 20px;
     }
-    }
+  }
 
-    h4 {
+  h4 {
     @include remsize(font-size, $font-size-h4-mobile);
     line-height: $line-height-l-mobile;
     margin-bottom: 15px;
 
-    @include breakpoint('medium') {
+    @include breakpoint('small') {
       @include remsize(font-size, $font-size-h4-desktop);
       line-height: $line-height-l-desktop;
       margin-bottom: 20px;
     }
-    }
+  }
 
-    /* Anchor tags */
+  /* Anchor tags */
 
-    a {
-    border-bottom: 1px solid $hm-link-colour;
+  a {
+    border-bottom: 4px solid;
+    border-color: transparent;
     color: $hm-link-colour;
     display: inline-block;
     line-height: $line-height-l-mobile;
     margin-bottom: 15px;
     text-decoration: none;
+    transition: all 0.2s ease-in-out;
     @include remsize(font-size, $font-size-base-mobile);
 
-    @include breakpoint('medium') {
+    @include breakpoint('small') {
       @include remsize(font-size, $font-size-base-desktop);
       line-height: $line-height-l-desktop;
       margin-bottom: 20px;
@@ -156,17 +161,17 @@ $font-size-h4-desktop: 19px;
       outline: 3px solid $hm-focus-colour;
       outline-offset: 0;
     }
-    }
+  }
 
-    /* Unordered List */
-    ul {
+  /* Unordered List */
+  ul {
     li {
       @include remsize(font-size, $font-size-base-mobile);
       line-height: $line-height-l-mobile;
       list-style: none;
       margin-bottom: 15px;
 
-      @include breakpoint('medium') {
+      @include breakpoint('small') {
         @include remsize(font-size, $font-size-base-desktop);
         line-height: $line-height-s-desktop;
         margin-bottom: 5px;
@@ -181,11 +186,11 @@ $font-size-h4-desktop: 19px;
         margin-left: 16px;
       }
     }
-    }
+  }
 
-    /* Ordered List */
+  /* Ordered List */
 
-    ol {
+  ol {
     padding-left: 20px;
     li {
       @include remsize(font-size, $font-size-base-mobile);
@@ -194,7 +199,7 @@ $font-size-h4-desktop: 19px;
       margin-bottom: 15px;
       margin-left: 16px;
 
-      @include breakpoint('medium') {
+      @include breakpoint('small') {
         @include remsize(font-size, $font-size-base-desktop);
         line-height: $line-height-s-desktop;
         margin-bottom: 5px;

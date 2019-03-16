@@ -5,8 +5,8 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className="container-fluid">
-          <div className="row row--spacing">
+        <div className="container">
+          <div className="row">
             <div className="col-12">
               <h1>Hello World !</h1>
             </div>
