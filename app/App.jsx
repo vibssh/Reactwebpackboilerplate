@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
-import Styles from './scss/app.scss';
+import './scss/app.scss';
 
 class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className={Styles['container-fluid']}>
-          <div className={[Styles['row'], Styles['row--spacing']].join(' ')}>
-            <div className={Styles['col-12']}>Hello World !</div>
+        <div className="container-fluid">
+          <div className="row row--spacing">
+            <div className="col-12">
+              <h1>Hello World !</h1>
+            </div>
           </div>
         </div>
       </React.Fragment>

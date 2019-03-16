@@ -43,7 +43,13 @@ module.exports = {
               sourceMap: true
             }
           },
-          'sass-loader'
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true,
+              data: '@import "./app/scss/app.scss";'
+            }
+          }
         ]
       }
     ]
